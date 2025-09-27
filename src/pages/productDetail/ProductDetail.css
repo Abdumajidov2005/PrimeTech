@@ -1,0 +1,226 @@
+.product-detail .container {
+  padding-bottom: 20px;
+}
+
+.product-detail .go-back {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.go-back a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.routermode.dark .go-back a{
+  color: var(--write-main-color);
+}
+
+.go-back span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.go-back span:hover {
+  color: var(--gray-blur);
+}
+
+.product-main-details {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product-main-details .detail-picture {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-picture .main-picture {
+  width: 100%;
+  height: 350px;
+  border: 1px solid var(--gray);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.routermode.dark .detail-picture .main-picture {
+  border: 1px solid var(--write-main-color);
+}
+
+.main-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.detail-picture .picture-panels {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 20px;
+}
+
+.picture-panels .picture-pick {
+  width: 107px;
+  height: 100px;
+  border: 1px solid var(--gray);
+  object-fit: contain;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.routermode.dark .detail-picture .picture-pick {
+  border: 1px solid var(--write-main-color);
+}
+
+.picture-pick:hover {
+  box-shadow: 0px 0px 1px 5px var(--gray-blur1);
+}
+
+.picture-pick img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.detail-information {
+  width: 620px;
+  padding: 10px 0px;
+  border-top: 1px solid var(--blue-main);
+  border-bottom: 1px solid var(--blue-main);
+}
+
+.detail-information h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+
+.routermode.dark .detail-information h2,
+.routermode.dark h2 span {
+  color: var(--write-main-color);
+}
+
+.detail-information h2 span {
+  color: var(--gray-blur);
+  font-size: 20px;
+}
+
+.detail-information p {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--gray-blur);
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.detail-information p span{
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gray-blur);
+  padding-bottom: 10px;
+}
+
+.detail-information p span:nth-child(1){
+  color: var(--gray);
+}
+
+.detail-information p span {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.routermode.dark .detail-information p,
+.routermode.dark p span {
+  color: var(--write-main-color);
+}
+
+
+.detail-buy {
+  border-top: 1px dashed var(--blue-main);
+  padding-top: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
+}
+
+.detail-buy a {
+  padding: 13px 50px;
+}
+
+@media (max-width: 480px) {
+  .product-detail .go-back{
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .product-detail .go-back a{
+    font-size: 14px;
+  }
+  .product-detail .go-back span{
+    font-size: 14px;
+  }
+  .detail-picture {
+    margin-bottom: 20px;
+  }
+  .detail-picture .main-picture {
+    height: 270px;
+  }
+  .detail-picture .picture-pick {
+    width: 70px;
+    height: 70px;
+  }
+  .detail-information h2 {
+    font-size: 18px;
+  }
+  .detail-information h2 span {
+    font-size: 16px;
+  }
+  .detail-information p {
+    font-size: 14px;
+  }
+
+  .detail-information p span {
+    font-size: 16px;
+  }
+  .detail-information .btn {
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 10px 26px;
+  }
+  .product-detail a {
+    font-size: 14px;
+  }
+  .product-detail span {
+    font-size: 13px;
+  }
+}

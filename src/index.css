@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  transition: all 0.3s ease;
+}
+
+:root {
+  --write-main-color: #fff;
+  --blue-main: rgb(17, 100, 206);
+  --blue-main-blur1: rgba(17, 99, 206, 0.542);
+  --blue-main-blur2: rgba(10, 112, 246, 0.925);
+  --gray: rgba(0, 0, 0, 0.997);
+  --gray-blur: rgba(15, 15, 15, 0.711);
+  --gray-blur1: rgba(10, 10, 10, 0.2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.routermode.dark {
+  background-color: black;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--blue-main);
+  color: var(--write-main-color);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  text-transform: capitalize;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover{
+    background-color: var(--blue-main-blur2);
+    transform: translateY(-2px);
+}
+
+input{
+  outline: none;
+}

@@ -1,0 +1,129 @@
+.sign-up .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0px;
+}
+
+.sign-up .sign-img{
+    border: 1px solid var(--gray);
+    width: 500px;
+    border-radius: 4px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.sign-img img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sign-up .sign-information{
+    width: 500px;
+}
+
+
+.sign-information h1{
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--gray);
+}
+
+.routermode.dark .sign-information h1{
+  color: var(--write-main-color);
+}
+
+.sign-information .sign-information_title{
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+.sign-information_title label{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.routermode.dark .sign-information_title label{
+  color: var(--write-main-color);
+}
+
+.sign-information_title input{
+    width: 80%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid var(--gray);
+}
+
+.sign-information_title input:focus{
+    box-shadow: 0px 0px 1px 3px var(--gray-blur1);
+}
+
+.sign-information button{
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    padding: 12px 50px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--gray);
+    color: var(--write-main-color);
+    border: 1px solid transparent;
+}
+
+.routermode.dark .sign-information button{
+  color: var(--write-main-color);
+  border: 1px solid var(--write-main-color);
+}
+
+.sign-information .submition{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submition p{
+  color: var(--gray);
+  font-size: 17px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submition p span{
+  color: var(--blue-main);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .sign-img{
+    display: none;
+  }
+  .sign-up h1{
+    font-size: 20px;
+  }
+  .sign-information_title label{
+    font-size: 12px;
+  }
+  .sign-information_title input{
+    font-size: 12px;
+  }
+  .sign-information button{
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+}

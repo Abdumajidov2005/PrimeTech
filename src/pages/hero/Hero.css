@@ -1,0 +1,88 @@
+.hero .container {
+  overflow: hidden;
+}
+
+.hero .swiper {
+  margin-top: 20px;
+  width: 100% !important;
+  height: 450px;
+  border-radius: 10px;
+}
+
+.hero .hero-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  height: 100%;
+  background-image: url("/imgs/1.jpg");
+  background-position: center;
+  background-size: 100%;
+}
+
+.SwiperSlide {
+  /* width: 100%;   */
+  border: 2px solid white;
+}
+
+.hero .swiper .swiper-button-prev {
+  left: 20px;
+  top: 220px;
+  color: #f5f5f5;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--write-main-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero .swiper .swiper-button-next {
+  right: 20px;
+  top: 220px;
+  color: #f5f5f5;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--write-main-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero .swiper .swiper-button-prev:hover,
+.hero .swiper .swiper-button-next:hover {
+  background-color: var(--write-main-color);
+  color: var(--gray);
+}
+
+.hero .swiper .swiper-button-prev::after,
+.hero .swiper .swiper-button-next::after {
+  font-size: 25px;
+  background-color: var(--blue-main);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+  .hero .swiper {
+    height: 200px;
+  }
+  .hero .swiper .swiper-button-next,
+  .hero .swiper .swiper-button-prev {
+    top: 105px;
+    width: 30px;
+    height: 30px;
+  }
+}
