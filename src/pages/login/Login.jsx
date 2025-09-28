@@ -48,9 +48,9 @@ function Login({setUserToken}) {
   };
 
   return (
-    <div className="sign-up">
+    <div className="sign-up login">
       <div className="container">
-        <div className="sign-img">
+        <div className="sign-img login-img">
           <img src="imgs/primetech.jpg" alt="" />
         </div>
         <form

@@ -31,12 +31,14 @@
   }
 }
 
+
 ul {
   list-style: none;
 }
 
 .routermode.dark {
-  background-color: black;
+  background-color: var(--gray);
+  min-height: 100vh;
 }
 
 .btn {

@@ -1,0 +1,26 @@
+.categorys .container{
+    padding: 20px 0px;
+}
+
+.categorys .get-back{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 30px;
+}
+
+.get-back a{
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--write-main-color);
+    background-color: var(--blue-main);
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.get-back a svg{
+    font-size: 20px;
+}

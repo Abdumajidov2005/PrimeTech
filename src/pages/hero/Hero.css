@@ -10,14 +10,50 @@
 }
 
 .hero .hero-component {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* width: 100%; */
   height: 100%;
-  background-image: url("/imgs/1.jpg");
   background-position: center;
   background-size: 100%;
+  background-color: var(--blue-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-img{
+  width: 50%;
+  height: 100%;
+}
+
+.hero-img img{
+  width: 100%;
+  height: 100%;
+}
+
+.hero-info{
+  background-color: yellow;
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  border-radius: 0px 100px 109px 0px;
+  text-align: center;
+  padding: 100px 50px;
+}
+
+.hero-info h1{
+  font-size: 46px;
+  nav-down: 900;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+
+.hero-info p{
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+.hero-info p span{
+  color: var(--write-main-color);
 }
 
 .SwiperSlide {

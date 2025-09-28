@@ -9,9 +9,12 @@ import Login from "../login/Login";
 import { ToastContainer } from "react-toastify";
 import { getToken } from "../services/token";
 import ScrollToTop from "../../components/scrolltotop/ScrollToTop";
+import Categorys from "../categorys/Categorys";
 
 function Routers() {
   const [userToken, setUserToken] = useState(getToken());
+    const [category, setCategory] = useState([]);
+
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme ? JSON.parse(savedTheme) : false;
@@ -33,7 +36,8 @@ function Routers() {
         />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home category={category} setCategory={setCategory}/>} />
+          <Route path="/categoryFilter/:id" element={<Categorys />}/>
           <Route path="/productDetail/:id" element={<ProductDetail />} />
           <Route path="/ro'yxatdan o'tish" element={<SignUp />} />
           <Route

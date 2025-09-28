@@ -1,0 +1,21 @@
+@media (max-width: 480px) {
+  .sign-up.login .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0px;
+  }
+
+  .sign-up.login .sign-img.login-img {
+    display: flex;
+  }
+
+  .sign-img.login-img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .sign-up.login .sign-information {
+    width: 100%;
+  }
+}

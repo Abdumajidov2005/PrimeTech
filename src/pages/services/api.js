@@ -61,8 +61,22 @@ export const getFilterCategoryData = (id) => {
   return fetch(`${baseUrl}/products/?category=${id}`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       return result;
+    })
+    .catch((error) => console.error(error));
+};
+
+export const getAnnouncement = () => {
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
+
+  return fetch(`${baseUrl}/announcements/`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result)
+      return result
     })
     .catch((error) => console.error(error));
 };
