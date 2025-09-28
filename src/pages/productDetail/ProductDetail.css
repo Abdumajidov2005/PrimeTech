@@ -116,6 +116,21 @@
   margin-bottom: 10px;
 }
 
+.detail-information .prices{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prices span:nth-child(1){
+  text-decoration: line-through;
+  color: var(--red);
+}
+
+.prices span:nth-child(2){
+  color: var(--blue-main);
+}
+
 .routermode.dark .detail-information h2,
 .routermode.dark h2 span {
   color: var(--write-main-color);

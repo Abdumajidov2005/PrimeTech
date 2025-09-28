@@ -19,7 +19,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-.border-title{
+.border-title {
   display: flex;
   align-items: start;
   flex-wrap: wrap;
@@ -39,13 +39,36 @@
   cursor: pointer;
 }
 
-.routermode.dark .social-getby p{
+.routermode.dark .social-getby p {
   color: var(--write-main-color);
 }
 
 .social-getby p:hover {
   color: var(--blue-main);
 }
+
+.social-getby a {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--gray);
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.social-getby a.active{
+  color: var(--blue-main);
+}
+
+.routermode.dark .social-getby a {
+  color: var(--write-main-color);
+}
+
+.social-getby a:hover {
+  color: var(--blue-main);
+}
+
+
 
 .border-social {
   display: flex;
@@ -64,7 +87,7 @@
   gap: 10px;
 }
 
-.routermode.dark .social a{
+.routermode.dark .social a {
   color: var(--write-main-color);
 }
 
@@ -84,7 +107,7 @@
     flex-direction: column;
   }
 
-  .border-title{
+  .border-title {
     gap: 0px;
   }
 

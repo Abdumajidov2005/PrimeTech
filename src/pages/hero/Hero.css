@@ -7,6 +7,11 @@
   width: 100% !important;
   height: 450px;
   border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--blue-main);
+}
+.routermode.dark .hero .swiper{
+  border-color: var(--write-main-color);
 }
 
 .hero .hero-component {
@@ -57,7 +62,6 @@
 }
 
 .SwiperSlide {
-  /* width: 100%;   */
   border: 2px solid white;
 }
 

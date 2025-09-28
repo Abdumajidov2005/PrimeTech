@@ -247,12 +247,27 @@
   z-index: 999;
 }
 
+.routermode.dark .navbar-modal{
+  border: 1px solid var(--write-main-color);
+}
+
 .navbar-modal.wiev{
   transform: translate(220%) scale(1);
 }
 
 .navbar-modal-content {
   width: 100%;
+}
+
+.navbar-modal-content .exit{
+  border: 1px solid var(--write-main-color);
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  color: var(--write-main-color);
 }
 
 .navbar-modal-content h1{

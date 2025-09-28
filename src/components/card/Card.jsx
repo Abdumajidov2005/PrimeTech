@@ -8,7 +8,9 @@ function Card({ item }) {
     <>
       <div key={item?.id} className="box">
         <Link className="box-send" to={`/productDetail/${item?.id}`}>
-          <div className="prsent">-{item?.discount_percentage}%</div>
+          {
+            item?.discount_percentage > 0 && <div className="prsent">-{item?.discount_percentage}%</div>
+          }
           <div className="box-img">
             <img src={`${baseUrl}/${item?.image}`} alt="box uchun rasm" />
           </div>
@@ -19,7 +21,10 @@ function Card({ item }) {
                 : item?.title}
             </h2>
             <h3>
-              Price: <span> {item?.price}$</span>{" "}
+              Brand: <span>{item?.brand}</span>
+            </h3>
+            <h3>
+              Price: <span> {item?.price}$</span>
               <span>{item?.discount_price}$</span>
             </h3>
           </div>

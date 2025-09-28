@@ -1,0 +1,13 @@
+.about .container{
+    border: 1px solid red;
+}
+
+.about-page h3{
+    color: var(--blue-main) !important;
+}
+
+.about-page span{
+    display: inline-block;
+    border: 2px solid red;
+    margin-bottom: 10px;
+}

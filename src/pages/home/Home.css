@@ -151,13 +151,23 @@
   gap: 10px;
 }
 
+.box h3:nth-of-type(1) span:nth-child(1){
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.routermode.dark .box h3:nth-of-type(1) span:nth-child(1){
+  color: var(--write-main-color);
+}
+
 .box h3 span{
   display: inline-block;
   font-size: 16px;
 }
 
 .box h3 span:nth-child(1){
-  color: var(--gray);
+  color: var(--red);
   text-decoration: line-through;
 }
 

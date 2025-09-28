@@ -75,8 +75,41 @@ export const getAnnouncement = () => {
   return fetch(`${baseUrl}/announcements/`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      console.log(result)
-      return result
+      console.log(result);
+      return result;
+    })
+    .catch((error) => console.error(error));
+};
+
+export const getSearchData = (searchProductName) => {
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
+
+  return fetch(
+    `${baseUrl}/products/?search=${searchProductName}`,
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      return result;
+    })
+    .catch((error) => console.error(error));
+};
+
+export const getAboutData = () => {
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
+
+  return fetch(`${baseUrl}/about/`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      return result;
     })
     .catch((error) => console.error(error));
 };

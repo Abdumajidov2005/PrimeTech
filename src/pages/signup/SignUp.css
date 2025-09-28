@@ -102,11 +102,16 @@
   gap: 10px;
 }
 
-.submition p span{
+.routermode.dark .submition p{
+  color: var(--write-main-color);
+}
+
+.submition p a{
   color: var(--blue-main);
   text-decoration: underline;
   cursor: pointer;
 }
+
 
 @media (max-width: 480px) {
   .sign-img{

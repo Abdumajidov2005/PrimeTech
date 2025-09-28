@@ -6,8 +6,9 @@ import { IoMdSunny } from "react-icons/io";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
+import { FaXmark } from "react-icons/fa6";
 
-function Navbar({ theme, setTheme, userToken, setUserToken }) {
+function Navbar({ theme, setTheme, userToken, setUserToken, setSearchProductName }) {
   const navigate = useNavigate();
   const [searchPhone, setSearchPhone] = useState(false);
   const [modal, setModal] = useState(false);
@@ -44,9 +45,13 @@ function Navbar({ theme, setTheme, userToken, setUserToken }) {
             </div>
             <h1>PRIME TECH</h1>
           </Link>
-          <div className="search">
-            <input type="text" placeholder="Maxsulotni kiriting..." />
-            <label htmlFor="">
+          <div onClick={()=>{
+            navigate("/searching")
+          }} className="search">
+            <input onInput={(e)=>{
+              setSearchProductName(e.target.value)
+            }} id="fasearch" type="text" placeholder="Maxsulotni kiriting..." />
+            <label htmlFor="fasearch">
               <FiSearch />
             </label>
           </div>
@@ -107,6 +112,11 @@ function Navbar({ theme, setTheme, userToken, setUserToken }) {
               className={`navbar-modal ${modal ? "wiev" : ""}`}
             >
               <div className="navbar-modal-content">
+                <p onClick={()=>{
+                  setModal(false)
+                }} className="exit">
+                  <FaXmark />
+                </p>
                 <h1>Shaxsiy kabinet</h1>
                 <h5>
                   <FaUserEdit /> Profilni tahrirlash

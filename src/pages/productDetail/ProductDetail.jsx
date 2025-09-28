@@ -7,7 +7,7 @@ import { getProductDetail } from "../services/api";
 function ProductDetail() {
   const { id } = useParams();
   const [selectDetail, setSelectDetail] = useState(null);
-  const[selectImg, setSelectImg] = useState("")
+  const [selectImg, setSelectImg] = useState("");
 
   useEffect(() => {
     getProductDetail(id)?.then(setSelectDetail);
@@ -18,7 +18,7 @@ function ProductDetail() {
       <div className="product-detail">
         <div className="container">
           <p className="go-back">
-            <Link to={"/"}>Asosiy sahifa </Link> 
+            <Link to={"/"}>Asosiy sahifa </Link>
             <span>/</span>
             <span>Mahsulot tafsilotlari </span>
             <span>/</span>
@@ -35,9 +35,13 @@ function ProductDetail() {
               <div className="picture-panels">
                 {selectDetail?.images?.map((item) => {
                   return (
-                    <div onClick={()=>{
-                      setSelectImg(item?.image)
-                    }} key={item?.id} className="picture-pick">
+                    <div
+                      onClick={() => {
+                        setSelectImg(item?.image);
+                      }}
+                      key={item?.id}
+                      className="picture-pick"
+                    >
                       <img src={item?.image} alt="Maxsulot rasmi bor edi" />
                     </div>
                   );
@@ -51,13 +55,19 @@ function ProductDetail() {
               <h2>
                 Brand : <span>{selectDetail?.brand}</span>
               </h2>
-              <h2>
-                Narxi : <span>{selectDetail?.price}$</span>
+              {selectDetail?.discount_percentage > 0 && (
+                <h2>
+                  Chegirmasi :<span>-{selectDetail?.discount_percentage}%</span>
+                </h2>
+              )}
+              <h2 className="prices">
+                Narxi : <span>{selectDetail?.price}$</span>{" "}
+                <span>{selectDetail?.discount_price}$</span>
               </h2>
               <p>
                 <span>Maxsulot tavsifi : </span>
                 {selectDetail?.description.split("\r\n").map((line, idx) => (
-                  <span style={{color:"GrayText"}} key={idx}>
+                  <span style={{ color: "GrayText" }} key={idx}>
                     {line}
                     <br />
                   </span>

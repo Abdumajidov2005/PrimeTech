@@ -16,6 +16,7 @@
   --gray: rgba(0, 0, 0, 0.997);
   --gray-blur: rgba(15, 15, 15, 0.711);
   --gray-blur1: rgba(10, 10, 10, 0.2);
+  --red: rgb(255, 0, 0);
 }
 
 .container {
@@ -30,7 +31,6 @@
     padding-right: 8px !important;
   }
 }
-
 
 ul {
   list-style: none;
@@ -53,11 +53,11 @@ ul {
   display: inline-block;
 }
 
-.btn:hover{
-    background-color: var(--blue-main-blur2);
-    transform: translateY(-2px);
+.btn:hover {
+  background-color: var(--blue-main-blur2);
+  transform: translateY(-2px);
 }
 
-input{
+input {
   outline: none;
 }

@@ -3,6 +3,7 @@ import "./Footer.css";
 import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { RiUserCommunityFill } from "react-icons/ri";
+import { Link, NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -12,7 +13,7 @@ function Footer() {
           <div className="border-title">
             <h1>The Future Is Yours</h1>
             <div className="social-getby">
-              <p>Biz haqimizda</p>
+              <NavLink to={"/aboutus"}>Biz haqimizda</NavLink>
               <p>Yangiliklar</p>
             </div>
           </div>
