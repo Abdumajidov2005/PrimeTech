@@ -8,7 +8,13 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
 import { FaXmark } from "react-icons/fa6";
 
-function Navbar({ theme, setTheme, userToken, setUserToken, setSearchProductName }) {
+function Navbar({
+  theme,
+  setTheme,
+  userToken,
+  setUserToken,
+  setSearchProductName,
+}) {
   const navigate = useNavigate();
   const [searchPhone, setSearchPhone] = useState(false);
   const [modal, setModal] = useState(false);
@@ -33,7 +39,29 @@ function Navbar({ theme, setTheme, userToken, setUserToken, setSearchProductName
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, [setModal]);
+  }, []);
+
+  const panelRefPhone = useRef(null);
+  const buttonRefPhone = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutsides = (event) => {
+      // agar na panel, na button bosilmasa -> yopiladi
+      if (
+        panelRefPhone.current &&
+        !panelRefPhone.current.contains(event.target) &&
+        buttonRefPhone.current &&
+        !buttonRefPhone.current.contains(event.target)
+      ) {
+        setSearchPhone(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutsides);
+    return () => {
+      document.removeEventListener("click", handleClickOutsides);
+    };
+  }, []);
 
   return (
     <>
@@ -45,20 +73,29 @@ function Navbar({ theme, setTheme, userToken, setUserToken, setSearchProductName
             </div>
             <h1>PRIME TECH</h1>
           </Link>
-          <div onClick={()=>{
-            navigate("/searching")
-          }} className="search">
-            <input onInput={(e)=>{
-              setSearchProductName(e.target.value)
-            }} id="fasearch" type="text" placeholder="Maxsulotni kiriting..." />
+          <div
+            onClick={() => {
+              navigate("/searching");
+            }}
+            className="search"
+          >
+            <input
+              onInput={(e) => {
+                setSearchProductName(e.target.value);
+              }}
+              id="fasearch"
+              type="text"
+              placeholder="Maxsulotni kiriting..."
+            />
             <label htmlFor="fasearch">
               <FiSearch />
             </label>
           </div>
           <div className="icons">
             <p
+              ref={buttonRefPhone}
               onClick={() => {
-                setSearchPhone((prev) => !prev);
+                setSearchPhone(!searchPhone);
               }}
               className="search-phone"
             >
@@ -112,9 +149,12 @@ function Navbar({ theme, setTheme, userToken, setUserToken, setSearchProductName
               className={`navbar-modal ${modal ? "wiev" : ""}`}
             >
               <div className="navbar-modal-content">
-                <p onClick={()=>{
-                  setModal(false)
-                }} className="exit">
+                <p
+                  onClick={() => {
+                    setModal(false);
+                  }}
+                  className="exit"
+                >
                   <FaXmark />
                 </p>
                 <h1>Shaxsiy kabinet</h1>
@@ -135,6 +175,7 @@ function Navbar({ theme, setTheme, userToken, setUserToken, setSearchProductName
             </div>
           </div>
           <div
+            ref={panelRefPhone}
             className={`search-phone-version ${searchPhone ? "active" : ""}`}
           >
             <input type="text" placeholder="Maxsulotni kiriting:" />

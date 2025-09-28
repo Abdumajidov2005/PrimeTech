@@ -49,7 +49,10 @@ export const getProductDetail = (id) => {
     .then((result) => {
       return result;
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error)
+      return []
+    });
 };
 
 export const getFilterCategoryData = (id) => {
@@ -63,7 +66,10 @@ export const getFilterCategoryData = (id) => {
     .then((result) => {
       return result;
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error)
+      return []
+    });
 };
 
 export const getAnnouncement = () => {
@@ -75,10 +81,12 @@ export const getAnnouncement = () => {
   return fetch(`${baseUrl}/announcements/`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       return result;
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error)
+      return []
+    });
 };
 
 export const getSearchData = (searchProductName) => {
@@ -93,10 +101,12 @@ export const getSearchData = (searchProductName) => {
   )
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       return result;
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error)
+      return []
+    });
 };
 
 export const getAboutData = () => {
@@ -108,8 +118,10 @@ export const getAboutData = () => {
   return fetch(`${baseUrl}/about/`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       return result;
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error)
+      return []
+    });
 };

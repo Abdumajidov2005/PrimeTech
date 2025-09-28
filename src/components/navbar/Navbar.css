@@ -243,15 +243,15 @@
   right: 50%;
   border-radius: 5px;
   padding: 12px 10px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   z-index: 999;
 }
 
-.routermode.dark .navbar-modal{
+.routermode.dark .navbar-modal {
   border: 1px solid var(--write-main-color);
 }
 
-.navbar-modal.wiev{
+.navbar-modal.wiev {
   transform: translate(220%) scale(1);
 }
 
@@ -259,7 +259,7 @@
   width: 100%;
 }
 
-.navbar-modal-content .exit{
+.navbar-modal-content .exit {
   border: 1px solid var(--write-main-color);
   position: absolute;
   top: 5px;
@@ -270,7 +270,7 @@
   color: var(--write-main-color);
 }
 
-.navbar-modal-content h1{
+.navbar-modal-content h1 {
   font-size: 23px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -292,7 +292,7 @@
   padding-bottom: 10px;
 }
 
-.navbar-modal-content h5:nth-child(2){
+.navbar-modal-content h5:nth-child(2) {
   margin-bottom: 0px;
 }
 
@@ -301,6 +301,29 @@
 }
 
 @media (max-width: 480px) {
+  .navbar-modal {
+    width: 200px;
+    top: 60px;
+    right: 0px;
+    transform: translate(0) scale(0);
+  }
+  .navbar-modal.wiev {
+    transform: translate(0) scale(1);
+  }
+  .navbar-modal-content .exit {
+    font-size: 15px;
+    width: 20px;
+    height: 20px;
+  }
+  .navbar-modal-content h1 {
+    font-size: 16px;
+  }
+  .navbar-modal-content h5 {
+    font-size: 14px;
+  }
+  .navbar-modal-content h5 svg {
+    font-size: 18px;
+  }
   .logo .logo-img {
     width: 40px;
     height: 40px;

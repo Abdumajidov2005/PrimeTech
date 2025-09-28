@@ -10,7 +10,7 @@
   overflow: hidden;
   border: 1px solid var(--blue-main);
 }
-.routermode.dark .hero .swiper{
+.routermode.dark .hero .swiper {
   border-color: var(--write-main-color);
 }
 
@@ -24,17 +24,17 @@
   justify-content: space-between;
 }
 
-.hero-img{
+.hero-img {
   width: 50%;
   height: 100%;
 }
 
-.hero-img img{
+.hero-img img {
   width: 100%;
   height: 100%;
 }
 
-.hero-info{
+.hero-info {
   background-color: yellow;
   width: 60%;
   height: 100%;
@@ -44,20 +44,20 @@
   padding: 100px 50px;
 }
 
-.hero-info h1{
+.hero-info h1 {
   font-size: 46px;
   nav-down: 900;
   color: var(--gray);
   margin-bottom: 10px;
 }
 
-.hero-info p{
+.hero-info p {
   font-size: 20px;
   font-weight: 600;
   line-height: 19px;
 }
 
-.hero-info p span{
+.hero-info p span {
   color: var(--write-main-color);
 }
 
@@ -124,5 +124,22 @@
     top: 105px;
     width: 30px;
     height: 30px;
+  }
+  .hero-info {
+    width: 53%;
+    padding: 4px 0px;
+    border-radius: 0px 10px 10px 0px;
+  }
+  .hero-info h1 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .hero-info p {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  .hero-info p span {
+    font-size: 12px;
   }
 }
