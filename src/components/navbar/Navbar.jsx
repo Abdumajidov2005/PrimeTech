@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
-import { FaShoppingCart, FaUser, FaUserEdit } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaShoppingCart,
+  FaUser,
+  FaUserEdit,
+} from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { IoMdSunny } from "react-icons/io";
 import { BsMoonStarsFill } from "react-icons/bs";
@@ -95,6 +100,7 @@ function Navbar({
             <p
               ref={buttonRefPhone}
               onClick={() => {
+                navigate("/searching");
                 setSearchPhone(!searchPhone);
               }}
               className="search-phone"
@@ -178,7 +184,21 @@ function Navbar({
             ref={panelRefPhone}
             className={`search-phone-version ${searchPhone ? "active" : ""}`}
           >
-            <input type="text" placeholder="Maxsulotni kiriting:" />
+            <p
+              onClick={() => {
+                setSearchPhone(false);
+                navigate("/")
+              }}
+            >
+              <FaChevronLeft />
+            </p>
+            <input
+              onInput={(e) => {
+                setSearchProductName(e.target.value);
+              }}
+              type="text"
+              placeholder="Maxsulotni kiriting:"
+            />
           </div>
         </div>
       </div>
