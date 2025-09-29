@@ -12,7 +12,7 @@ function Card({ item }) {
             item?.discount_percentage > 0 && <div className="prsent">-{item?.discount_percentage}%</div>
           }
           <div className="box-img">
-            <img src={`${baseUrl}/${item?.image}`} alt="box uchun rasm" />
+            <img src={`${baseUrl}/${item?.image}`} alt="box for img" />
           </div>
           <div className="contents">
             <h2>
@@ -21,10 +21,10 @@ function Card({ item }) {
                 : item?.title}
             </h2>
             <h3>
-              Brand: <span>{item?.brand}</span>
+              Firmasi: <span>{item?.brand}</span>
             </h3>
             <h3>
-              Price: <span> {item?.price}$</span>
+              Narxi: <span> {item?.price}$</span>
               <span>{item?.discount_price}$</span>
             </h3>
           </div>

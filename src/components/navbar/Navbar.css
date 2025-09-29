@@ -221,6 +221,16 @@
   justify-content: center;
 }
 
+.icons p:hover {
+  background-color: var(--gray);
+  color: var(--write-main-color);
+}
+
+.icons p.user-modal {
+  background-color: var(--gray);
+  color: var(--write-main-color);
+}
+
 .routermode.dark .icons p {
   border: 1px solid var(--write-main-color);
   color: var(--write-main-color);
@@ -293,7 +303,7 @@
   border-radius: 10px;
 }
 
-.navbar-modal-content h5:hover{
+.navbar-modal-content h5:hover {
   background-color: var(--gray);
 }
 
@@ -303,6 +313,33 @@
 
 .navbar-modal-content h5 svg {
   font-size: 25px;
+}
+
+.navbar-modal-content .profil{
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--write-main-color);
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.navbar-modal-content .profil:hover {
+  background-color: var(--gray);
+}
+
+.navbar-modal-content .profil:nth-child(2) {
+  margin-bottom: 0px;
+}
+
+.navbar-modal-content .profil svg {
+  font-size: 23px;
 }
 
 @media (max-width: 480px) {
@@ -327,6 +364,12 @@
     font-size: 14px;
   }
   .navbar-modal-content h5 svg {
+    font-size: 18px;
+  }
+   .navbar-modal-content .profil {
+    font-size: 14px;
+  }
+  .navbar-modal-content .profil svg {
     font-size: 18px;
   }
   .logo .logo-img {
@@ -404,7 +447,7 @@
     top: 0px;
     z-index: 1;
   }
-  .search-phone-version p{
+  .search-phone-version p {
     font-size: 20px;
     color: var(--gray);
     border: 1px solid var(--blue-main);

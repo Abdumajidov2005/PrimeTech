@@ -140,6 +140,7 @@ function Navbar({
 
             {userToken ? (
               <p
+                className={modal ? "user-modal" : ""}
                 ref={buttonRef}
                 onClick={() => {
                   setModal(!modal);
@@ -164,9 +165,15 @@ function Navbar({
                   <FaXmark />
                 </p>
                 <h1>Shaxsiy kabinet</h1>
-                <h5>
+                <Link
+                  onClick={() => {
+                    setModal(false);
+                  }}
+                  to={"/editProfil"}
+                  className="profil"
+                >
                   <FaUserEdit /> Profilni tahrirlash
-                </h5>
+                </Link>
                 <h5
                   onClick={() => {
                     localStorage.clear();
@@ -187,7 +194,7 @@ function Navbar({
             <p
               onClick={() => {
                 setSearchPhone(false);
-                navigate("/")
+                navigate("/");
               }}
             >
               <FaChevronLeft />

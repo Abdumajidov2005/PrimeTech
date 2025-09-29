@@ -50,8 +50,8 @@ export const getProductDetail = (id) => {
       return result;
     })
     .catch((error) => {
-      console.error(error)
-      return []
+      console.error(error);
+      return [];
     });
 };
 
@@ -67,8 +67,8 @@ export const getFilterCategoryData = (id) => {
       return result;
     })
     .catch((error) => {
-      console.error(error)
-      return []
+      console.error(error);
+      return [];
     });
 };
 
@@ -84,8 +84,8 @@ export const getAnnouncement = () => {
       return result;
     })
     .catch((error) => {
-      console.error(error)
-      return []
+      console.error(error);
+      return [];
     });
 };
 
@@ -104,8 +104,8 @@ export const getSearchData = (searchProductName) => {
       return result;
     })
     .catch((error) => {
-      console.error(error)
-      return []
+      console.error(error);
+      return [];
     });
 };
 
@@ -121,7 +121,28 @@ export const getAboutData = () => {
       return result;
     })
     .catch((error) => {
+      console.error(error);
+      return [];
+    });
+};
+
+export const getUserData = () => {
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", `Bearer ${getToken()}`);
+
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  return fetch(`${baseUrl}/auth/user-crud/`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      return result
+    })
+    .catch((error) => {
       console.error(error)
-      return []
+      return[]
     });
 };

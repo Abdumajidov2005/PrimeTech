@@ -13,6 +13,7 @@ import Categorys from "../categorys/Categorys";
 import Search from "../searchPoduct/Search";
 import Error from "../error/Error";
 import Abouts from "../about/Abouts";
+import AccountEdit from "../accountEdit/AccountEdit";
 
 function Routers() {
   const [userToken, setUserToken] = useState(getToken());
@@ -51,6 +52,7 @@ function Routers() {
             path="/searching"
             element={<Search searchProductName={searchProductName} />}
           />
+          <Route path="/editProfil" element={<AccountEdit/>}/>
           <Route path="/ro'yxatdan o'tish" element={<SignUp />} />
           <Route
             path="kirish"

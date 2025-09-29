@@ -8,9 +8,9 @@ function SignUp() {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
+  const [password, setPassword] = useState("");
 
   const register = () => {
     const myHeaders = new Headers();

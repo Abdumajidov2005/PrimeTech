@@ -53,7 +53,7 @@ function ProductDetail() {
                 Nomi : <span>{selectDetail?.title}</span>
               </h2>
               <h2>
-                Brand : <span>{selectDetail?.brand}</span>
+                Firmasi: <span>{selectDetail?.brand}</span>
               </h2>
               {selectDetail?.discount_percentage > 0 && (
                 <h2>

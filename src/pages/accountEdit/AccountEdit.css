@@ -1,0 +1,109 @@
+.account-edit .container{
+    padding: 30px 0px;
+}
+
+
+.account-edit-title{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.account-edit-title h1{
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--gray);
+}
+
+.routermode.dark .account-edit-title h1{
+    color: var(--write-main-color);
+}
+
+.account-edit .block-profil{
+    border: 2px solid var(--blue-main);
+    border-radius: 10px;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+.block-profil .block-profil_contents{
+    width: 100%;
+    margin-bottom: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--blue-main);
+    background-color: var(--blue-main);
+    border-radius: 10px;
+    padding: 2px;
+    padding-left: 10px;
+
+}
+
+.block-profil_contents:nth-of-type(4){
+    margin-bottom: 0px;
+}
+
+.block-profil_contents label{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--write-main-color);
+    width: 23%;
+}
+
+.block-profil_contents input{
+    width: 81%;
+    padding: 10px 10px;
+    border-radius: 7px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.block-profil_contents input::placeholder{
+    color: var(--gray-blur1);
+}
+
+.btns{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.btns button{
+    padding: 10px 10px;
+    background-color: var(--blue-main);
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--write-main-color);
+    cursor: pointer;
+}
+
+.btns button:nth-child(2){
+    background-color: var(--red);
+}
+
+@media (max-width: 480px) {
+    .account-edit-title h1{
+       font-size: 30px;
+    }
+  .block-profil .block-profil_contents{
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 3px;
+  }
+  .block-profil_contents label{
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .block-profil_contents input{
+    width: 100%;
+  }
+}
