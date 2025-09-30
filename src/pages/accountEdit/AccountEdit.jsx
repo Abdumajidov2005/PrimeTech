@@ -54,8 +54,7 @@ function AccountEdit() {
     fetch(`${baseUrl}/auth/user-crud/`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        toast.success("tasdiqlandi");
-        console.log(result);
+        toast.success("Profil tasdiqlandi");
         navigate("/");
       })
       .catch((error) => console.error(error));

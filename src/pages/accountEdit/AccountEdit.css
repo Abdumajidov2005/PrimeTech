@@ -69,6 +69,7 @@
 .btns{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 15px;
     padding-top: 20px;
 }
@@ -105,5 +106,9 @@
   }
   .block-profil_contents input{
     width: 100%;
+  }
+ 
+  .btns button{
+    font-size: 14px;
   }
 }
