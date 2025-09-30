@@ -61,3 +61,28 @@ ul {
 input {
   outline: none;
 }
+
+.routermode.dark .darkener {
+  background: linear-gradient(
+    90deg,
+    rgba(40, 40, 40, 1),
+    rgba(50, 50, 50, 1),
+    rgba(60, 60, 60, 1),
+    rgba(50, 50, 50, 1),
+    rgba(40, 40, 40, 1)
+  );
+  background-size: 500%;
+  animation: loaderpath2 10s linear infinite;
+}
+
+@keyframes loaderpath2 {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 300%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}

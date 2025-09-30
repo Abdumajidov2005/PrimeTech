@@ -18,7 +18,11 @@ function Hero() {
     setMotion(true);
     getAnnouncement()
       .then((data) => {
-        setAnons(data);
+        if (Array.isArray(data) && data.length > 0) {
+          setAnons(data);
+        } else {
+          setAnons([]);
+        }
       })
       .finally(() => {
         setMotion(false);
@@ -29,8 +33,8 @@ function Hero() {
     <>
       <div className="hero">
         <div className="container">
-          {motion ? (
-            <div className="hero-skeleton_border"></div>
+          {motion || anons.length === 0 ? (
+            <div className="hero-skeleton_border darkener"></div>
           ) : (
             <Swiper
               spaceBetween={30}

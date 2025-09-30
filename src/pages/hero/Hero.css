@@ -19,28 +19,6 @@
   animation: loaderpath2 10s linear infinite;
 }
 
-.routermode.dark .hero-skeleton_border{
-  background: linear-gradient(
-    90deg,
-    rgba(40, 40, 40, 1),
-    rgba(50, 50, 50, 1),
-    rgba(60, 60, 60, 1),
-    rgba(50, 50, 50, 1),
-    rgba(40, 40, 40, 1)
-);
-}
-
-@keyframes loaderpath2 {
-  0% {
-    background-position: 0%;
-  }
-  50% {
-    background-position: 300%;
-  }
-  100% {
-    background-position: 0%;
-  }
-}
 
 .hero .swiper {
   margin-top: 20px;
@@ -156,6 +134,9 @@
 }
 
 @media (max-width: 480px) {
+  .hero-skeleton_border {
+    height: 200px;
+  }
   .hero .swiper {
     height: 200px;
   }
