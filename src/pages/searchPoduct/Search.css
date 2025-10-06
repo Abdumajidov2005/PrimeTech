@@ -1,3 +1,114 @@
 .search-products .container {
-    padding: 20px 0px;
+  padding: 20px 0px;
+}
+
+.notResult {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search_icons {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.search_icons span {
+  display: inline-block;
+  position: absolute;
+}
+
+.search_icons span:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  border: 10px solid black;
+  border-radius: 50%;
+  top: 10px;
+  left: 36%;
+  background-color: aqua;
+  animation: searchAnimation 3s linear infinite;
+  z-index: 1;
+}
+
+.search_icons span:nth-child(2) {
+  z-index: 0;
+  width: 20px;
+  height: 170px;
+  background-color: var(--gray);
+  top: 160px;
+  left: 52%;
+  transform: rotate(-40deg);
+  border-radius: 0px 0px 10px 10px;
+  animation: searchAnimation1 3s linear infinite;
+}
+
+.search_icons p{
+  position: absolute;
+  bottom: 40px;
+  left: 27%;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.search_icons button{
+  position: absolute;
+  bottom: 70px;
+  left: 45%;
+  padding: 10px 30px;
+  background-color: var(--write-main-color);
+  border-radius: 10px;
+  border: 1px solid var(--gray);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--gray);
+  letter-spacing: 1px;
+}
+
+@keyframes searchAnimation {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(20px) translateX(-10px);
+  }
+}
+
+@keyframes searchAnimation1 {
+  0% {
+    transform: translateX(0px) translateY(0px) rotate(-40deg);
+  }
+  50%{
+    transform: translateX(0px) translateY(20px) rotate(-40deg);
+  }
+ 
+}
+
+@media (max-width: 480px) {
+  .search_icons span:nth-child(1) {
+  width: 130px;
+  height: 130px;
+  
+}
+
+.search_icons span:nth-child(2) {
+  z-index: 0;
+  width: 20px;
+  height: 100px;
+  top: 110px;
+  left: 64%;
+}
+.search_icons p{
+  bottom: 50px;
+  left: 10%;
+  text-align: center;
+}
+.search_icons button{
+  bottom: 170px;
+  left: 38%;
+}
 }

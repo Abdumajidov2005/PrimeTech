@@ -13,17 +13,19 @@ function Home({ category, setCategory }) {
   useEffect(() => {
     setCategoryMotion(true);
     setDataMotion(true);
-    getProductData()?.then((data) => {
-      if (Array.isArray(data) && data.length > 0) {
-        setData(data);
-      } else {
-        setData([]);
-      }
-    });
-    getCategoyData()
-      ?.then((data) => {
-        if (Array.isArray(data) && data.length > 0) {
-          setCategory(data);
+
+    Promise.all([getProductData(), getCategoyData()])
+      .then(([productData, categoryData]) => {
+        // product
+        if (Array.isArray(productData) && productData.length > 0) {
+          setData(productData);
+        } else {
+          setData([]);
+        }
+
+        // category
+        if (Array.isArray(categoryData) && categoryData.length > 0) {
+          setCategory(categoryData);
         } else {
           setCategory([]);
         }

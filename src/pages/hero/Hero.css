@@ -19,7 +19,6 @@
   animation: loaderpath2 10s linear infinite;
 }
 
-
 .hero .swiper {
   margin-top: 20px;
   width: 100% !important;
@@ -60,6 +59,28 @@
   border-radius: 0px 100px 109px 0px;
   text-align: center;
   padding: 100px 50px;
+}
+
+.hero-info_imgs{
+  width: 100%;
+  padding: 10px 0px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.imgs_selections{
+  width: 160px;
+  height: 160px;
+  border: 1px solid white;
+}
+
+.imgs_selections img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .hero-info h1 {

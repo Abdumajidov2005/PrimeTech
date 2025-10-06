@@ -38,6 +38,7 @@ function Routers() {
           setTheme={setTheme}
           userToken={userToken}
           setUserToken={setUserToken}
+          searchProductName={searchProductName}
           setSearchProductName={setSearchProductName}
         />
         <ScrollToTop />
@@ -50,15 +51,20 @@ function Routers() {
           <Route path="/productDetail/:id" element={<ProductDetail />} />
           <Route
             path="/searching"
-            element={<Search searchProductName={searchProductName} />}
+            element={
+              <Search
+                searchProductName={searchProductName}
+                setSearchProductName={setSearchProductName}
+              />
+            }
           />
-          <Route path="/editProfil" element={<AccountEdit/>}/>
+          <Route path="/editProfil" element={<AccountEdit />} />
           <Route path="/ro'yxatdan o'tish" element={<SignUp />} />
           <Route
             path="kirish"
             element={<Login setUserToken={setUserToken} />}
           />
-          <Route path="aboutus" element={<Abouts/>}/>
+          <Route path="aboutus" element={<Abouts />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

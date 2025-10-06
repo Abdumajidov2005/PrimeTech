@@ -6,13 +6,14 @@ import { toast } from "react-toastify";
 
 function SignUp() {
   const navigate = useNavigate();
-
+  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [password, setPassword] = useState("");
 
   const register = () => {
+    setLoading(true);
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -42,11 +43,15 @@ function SignUp() {
           navigate("/kirish");
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(()=>{
+        setLoading(false)
+      })
   };
 
   return (
     <>
+    
       <div className="sign-up">
         <div className="container">
           <div className="sign-img">
@@ -81,13 +86,13 @@ function SignUp() {
               />
             </div>
             <div className="sign-information_title">
-              <label htmlFor="">Profilingizni nomlang:</label>
+              <label htmlFor="">Username:</label>
               <input
                 onInput={(e) => {
                   setUsername(e.target.value);
                 }}
                 type="text"
-                placeholder="Nomlang...."
+                placeholder="Username..."
               />
             </div>
             <div className="sign-information_title">
@@ -101,8 +106,14 @@ function SignUp() {
               />
             </div>
             <div className="submition">
-              <button>Profilni yaratish</button>
-              <p>Profilingiz mavjud bo'lsa <Link to={"/kirish"}>Kirish</Link></p>
+              {loading ? (
+                <button>Yuklanmoqda....</button>
+              ) : (
+                <button>Profilni yaratish</button>
+              )}
+              <p>
+                Profilingiz mavjud bo'lsa <Link to={"/kirish"}>Kirish</Link>
+              </p>
             </div>
           </form>
         </div>

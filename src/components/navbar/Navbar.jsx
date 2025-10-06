@@ -18,6 +18,7 @@ function Navbar({
   setTheme,
   userToken,
   setUserToken,
+  searchProductName,
   setSearchProductName,
 }) {
   const navigate = useNavigate();
@@ -88,6 +89,7 @@ function Navbar({
               onInput={(e) => {
                 setSearchProductName(e.target.value);
               }}
+              value={searchProductName}
               id="fasearch"
               type="text"
               placeholder="Maxsulotni kiriting..."

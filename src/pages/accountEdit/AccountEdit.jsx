@@ -13,15 +13,21 @@ function AccountEdit() {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
+  const [editLoader, setEditLoader] = useState(false);
 
   useEffect(() => {
-    getUserData()?.then((data) => {
-      setUserData(data);
-      setFirstName(data?.first_name || "");
-      setLastName(data?.last_name || "");
-      setPhoneNumber(data?.phone_number || "");
-      setUsername(data?.username || "");
-    });
+    setEditLoader(true);
+    getUserData()
+      ?.then((data) => {
+        setUserData(data);
+        setFirstName(data?.first_name || "");
+        setLastName(data?.last_name || "");
+        setPhoneNumber(data?.phone_number || "");
+        setUsername(data?.username || "");
+      })
+      .finally(() => {
+        setEditLoader(false);
+      });
   }, []);
 
   const editProfil = () => {
@@ -54,7 +60,7 @@ function AccountEdit() {
     fetch(`${baseUrl}/auth/user-crud/`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        toast.success("Profil tasdiqlandi");
+        toast.success("Profil yangilandi");
         navigate("/");
       })
       .catch((error) => console.error(error));
@@ -82,7 +88,7 @@ function AccountEdit() {
                 }}
                 value={username}
                 type="text"
-                placeholder="Profil nomi"
+                placeholder={editLoader ? "Yuklanmoqda...":"Profil nomi"}
               />
             </div>
             <div className="block-profil_contents">
@@ -93,7 +99,7 @@ function AccountEdit() {
                 }}
                 value={first_name}
                 type="text"
-                placeholder="Ismingiz"
+                placeholder={editLoader ? "Yuklanmoqda...":"Ismingiz"}
               />
             </div>
             <div className="block-profil_contents">
@@ -104,7 +110,7 @@ function AccountEdit() {
                 }}
                 value={last_name}
                 type="text"
-                placeholder="Familyangiz"
+                placeholder={editLoader ? "Yuklanmoqda...":"Familyangiz"}
               />
             </div>
             <div className="block-profil_contents">

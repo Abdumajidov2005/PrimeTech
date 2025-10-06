@@ -1,50 +1,84 @@
-.about .container{
-    border: 4px dotted var(--blue-main);
-    margin: 30px auto;
+.about_loaders .container{
+  border: 4px dotted var(--blue-main);
+  margin: 30px auto;
+  padding: 5px;
 }
 
-.about h1{
-    text-align: center;
-    font-size: 40px;
-    font-weight: 900;
-    color: var(--blue-main);
-    padding: 20px 0px;
+.about_loaders span {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    rgb(204, 203, 203, 1),
+    rgb(206, 205, 205, 1),
+    rgb(246, 245, 245),
+    rgb(206, 205, 205, 1),
+    rgba(204, 203, 203, 1)
+  );
+  background-size: 500%;
+  animation: loaderpath2 10s linear infinite;
+  margin-bottom: 20px;
+}
+
+.about_loaders span:nth-child(1){
+  width: 40%;
+  margin: 20px auto;
+}
+
+.about .container {
+  border: 4px dotted var(--blue-main);
+  margin: 30px auto;
+}
+
+.about h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--blue-main);
+  padding: 20px 0px;
 }
 
 .about-page {
-    padding: 0px 10px;
+  padding: 0px 10px;
 }
 
-.about-page h3{
-    font-size: 20px !important;
-    font-weight: 600 !important;
-    color: var(--blue-main) !important;
+.about-page h3 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--blue-main) !important;
 }
 
-.routermode.dark .about-page h3{
-    color: var(-white-main-write);
+.routermode.dark .about-page h3 {
+  color: var(-white-main-write);
 }
 
-.about-page span{
-    display: inline-block;
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    line-height: 26px;
+.about-page span {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  line-height: 26px;
+  color: var(--gray);
+}
+
+.routermode.dark .about-page span{
+  color: white;
 }
 
 @media (max-width: 480px) {
-  .about .container{
+  .about .container {
     border: none;
   }
-  .about h1{
+  .about h1 {
     font-size: 30px;
   }
-  .about-page h3{
+  .about-page h3 {
     font-size: 18px;
   }
-  .about-page span{
+  .about-page span {
     font-size: 16px;
   }
 }

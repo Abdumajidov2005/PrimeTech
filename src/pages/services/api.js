@@ -2,11 +2,8 @@ import { baseUrl } from "./config";
 import { getToken } from "./token";
 
 export const getProductData = () => {
-  const myHeaders = new Headers();
-  getToken() ? myHeaders.append("Authorization", `Bearer ${getToken()}`) : "";
   const requestOptions = {
     method: "GET",
-    headers: myHeaders,
     redirect: "follow",
   };
 
@@ -20,6 +17,7 @@ export const getProductData = () => {
       return [];
     });
 };
+
 
 export const getCategoyData = () => {
   const requestOptions = {
@@ -139,10 +137,10 @@ export const getUserData = () => {
   return fetch(`${baseUrl}/auth/user-crud/`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      return result
+      return result;
     })
     .catch((error) => {
-      console.error(error)
-      return[]
+      console.error(error);
+      return [];
     });
 };

@@ -62,6 +62,31 @@ input {
   outline: none;
 }
 
+.box-borders{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.box-skeleton {
+  width: 284px;
+  height: 310px;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    rgb(204, 203, 203, 1),
+    rgb(206, 205, 205, 1),
+    rgb(246, 245, 245),
+    rgb(206, 205, 205, 1),
+    rgba(204, 203, 203, 1)
+  );
+  background-size: 500%;
+  animation: loaderpath2 10s linear infinite;
+}
+
 .routermode.dark .darkener {
   background: linear-gradient(
     90deg,

@@ -57,11 +57,20 @@ function Hero() {
                       <div className="hero-info">
                         <h1>{item?.title}</h1>
 
-                        <div
+                        {/* <div
                           dangerouslySetInnerHTML={{
                             __html: item?.description || "",
                           }}
-                        />
+                        /> */}
+                        <div className="hero-info_imgs">
+                          {item?.images?.map((item) => {
+                            return (
+                              <div key={item?.id} className="imgs_selections">
+                                <img src={item?.image} alt="" />
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
                       <div></div>
                       <div className="hero-img">

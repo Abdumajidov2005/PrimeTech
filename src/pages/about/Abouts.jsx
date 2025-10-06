@@ -5,9 +5,15 @@ import { getAboutData } from "../services/api";
 
 function Abouts() {
   const [aboutGr, setAboutGr] = useState([]);
+  const [aboutLoding, setAboutLoading] = useState(false);
 
   useEffect(() => {
-    getAboutData()?.then(setAboutGr);
+    setAboutLoading(true);
+    getAboutData()
+      ?.then(setAboutGr)
+      .finally(() => {
+        setAboutLoading(false);
+      });
   }, []);
 
   const cleanDescription = DOMPurify.sanitize(aboutGr?.description || "", {
@@ -16,22 +22,39 @@ function Abouts() {
 
   return (
     <>
-      <div className="about">
-        <div className="container">
-          <h1>{aboutGr?.title}</h1>
-          <div
-            className="about-page"
-            dangerouslySetInnerHTML={{ __html: cleanDescription }}
-          />
+      {aboutLoding ? (
+        <div className="about_loaders">
+          <div className="container">
+            <span className="darkener"></span>
+            <span className="darkener"></span>
+            <span className="darkener"></span>
+            <span className="darkener"></span>
+            <span className="darkener"></span>
+            <span className="darkener"></span>
+            <span className="darkener"></span>
+            <span className="darkener"></span>
+            <span className="darkener"></span>
+            <span className="darkener"></span>
+          </div>
+        </div>
+      ) : (
+        <div className="about">
+          <div className="container">
+            <h1>{aboutGr?.title}</h1>
+            <div
+              className="about-page"
+              dangerouslySetInnerHTML={{ __html: cleanDescription }}
+            />
 
-          {/* <img src={aboutGr?.image} alt="" /> */}
-          {/* <div>
+            {/* <img src={aboutGr?.image} alt="" /> */}
+            {/* <div>
             {aboutGr?.images?.map((item) => {
               return <img src={item?.image} alt="" />;
             })}
           </div> */}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

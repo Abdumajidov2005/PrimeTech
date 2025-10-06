@@ -71,3 +71,21 @@
     transform: scale(1);
   }
 }
+
+@media (max-width: 480px) {
+  .error-page .error-content{
+    height: 370px;
+  }
+  .error-page .container{
+    padding: 10px 0px;
+  }
+  .error-page .error-page_infos h1{
+    font-size: 100px;
+  }
+  .error-page p{
+    font-size: 15px;
+  }
+  .error-page button{
+    font-size: 14px;
+  }
+}
