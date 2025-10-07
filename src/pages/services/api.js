@@ -18,7 +18,6 @@ export const getProductData = () => {
     });
 };
 
-
 export const getCategoyData = () => {
   const requestOptions = {
     method: "GET",
@@ -85,6 +84,20 @@ export const getAnnouncement = () => {
       console.error(error);
       return [];
     });
+};
+
+export const getAnnouncementId = (id) => {
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
+
+  return fetch(`${baseUrl}/announcement/${id}/`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      return result;
+    })
+    .catch((error) => console.error(error));
 };
 
 export const getSearchData = (searchProductName) => {

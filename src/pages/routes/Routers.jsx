@@ -14,6 +14,7 @@ import Search from "../searchPoduct/Search";
 import Error from "../error/Error";
 import Abouts from "../about/Abouts";
 import AccountEdit from "../accountEdit/AccountEdit";
+import AnnoucimentDetails from "../annoucimentDetails/AnnoucimentDetails";
 
 function Routers() {
   const [userToken, setUserToken] = useState(getToken());
@@ -49,6 +50,7 @@ function Routers() {
           />
           <Route path="/categoryFilter/:id" element={<Categorys />} />
           <Route path="/productDetail/:id" element={<ProductDetail />} />
+          <Route path="/annocumentDetails/:id" element={<AnnoucimentDetails/>}/>
           <Route
             path="/searching"
             element={

@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { getAnnouncement } from "../services/api";
+import { Link } from "react-router-dom";
 
 function Hero() {
   const [anons, setAnons] = useState([]);
@@ -53,7 +54,7 @@ function Hero() {
               {anons?.map((item) => {
                 return (
                   <SwiperSlide>
-                    <div className="hero-component">
+                    <Link key={item?.id} to={`/annocumentDetails/${item?.id}`} className="hero-component">
                       <div className="hero-info">
                         <h1>{item?.title}</h1>
 
@@ -76,7 +77,7 @@ function Hero() {
                       <div className="hero-img">
                         <img src={`${item?.image}`} alt="" />
                       </div>
-                    </div>
+                    </Link>
                   </SwiperSlide>
                 );
               })}

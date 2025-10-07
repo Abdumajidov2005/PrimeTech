@@ -1,0 +1,13 @@
+.annouciment-Id .container{
+    padding: 20px 0px;
+}
+
+
+.routermode.dark .boxelement span{
+    color: white !important;
+}
+
+
+.routermode.dark .boxelement p{
+    color: white !important;
+}
