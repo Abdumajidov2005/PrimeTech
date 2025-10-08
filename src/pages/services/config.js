@@ -1,1 +1,1 @@
-export const baseUrl = "https://primetech.uz"
+export const baseUrl = "https://api.primetech.uz"

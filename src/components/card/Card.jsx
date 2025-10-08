@@ -21,7 +21,7 @@ function Card({ item }) {
                 : item?.title}
             </h2>
             <h3>
-              Firmasi: <span>{item?.brand}</span>
+              Brand: <span>{item?.brand}</span>
             </h3>
             <h3>
               Narxi: <span> {item?.price}$</span>

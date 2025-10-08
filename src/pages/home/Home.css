@@ -213,14 +213,14 @@
      width: 180px;
      height: 50px;
   }
-  .category p {
+  .category a {
     font-size: 12px;
     font-weight: 400;
     padding: 4px;
     gap: 4px;
     flex-direction: column;
   }
-  .category p span {
+  .category a span {
     width: 100%;
     display: inline-block;
     background-color: white;

@@ -2,7 +2,7 @@
 
 .footer {
   background-color: var(--write-main-color);
-  border-top: 1px solid var(--gray);
+  border-top: 0.5px solid var(--gray-blur1);
 }
 
 .routermode.dark .footer {
