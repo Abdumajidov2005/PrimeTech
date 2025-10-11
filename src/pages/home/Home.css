@@ -94,8 +94,6 @@
   padding-bottom: 20px;
 }
 
-
-
 .box-model .box {
   width: 284px;
   border: 1px solid var(--blue-main);
@@ -197,6 +195,24 @@
   color: var(--blue-main);
 }
 
+.prices-alls {
+  position: relative;
+}
+
+.buyBtn {
+  position: absolute;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid var(--blue-main);
+  color: var(--blue-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
 .box .btn-borders {
   padding: 5px;
 }
@@ -209,9 +225,9 @@
 }
 
 @media (max-width: 480px) {
-  .category-skeleton{
-     width: 180px;
-     height: 50px;
+  .category-skeleton {
+    width: 180px;
+    height: 50px;
   }
   .category a {
     font-size: 12px;
@@ -234,10 +250,10 @@
   .box-model {
     justify-content: center;
   }
-  .box-borders{
+  .box-borders {
     justify-content: center;
   }
-  .box-skeleton{
+  .box-skeleton {
     width: 45%;
     height: 260px;
   }
@@ -247,17 +263,23 @@
   .box .prsent {
     font-size: 14px;
   }
+  .buyBtn{
+    width: 27px;
+    height: 27px;
+    right: 3px;
+  }
   .box h2 {
     font-size: 16px;
   }
   .box h3 {
     font-size: 14px;
+    gap: 5px;
   }
   .box .btn {
     font-size: 14px;
     letter-spacing: 2px;
   }
   .box .box-img {
-    height: 150px;
+    height: 120px;
   }
 }

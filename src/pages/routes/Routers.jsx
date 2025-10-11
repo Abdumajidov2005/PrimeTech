@@ -15,11 +15,15 @@ import Error from "../error/Error";
 import Abouts from "../about/Abouts";
 import AccountEdit from "../accountEdit/AccountEdit";
 import AnnoucimentDetails from "../annoucimentDetails/AnnoucimentDetails";
+import Carts from "../cart/Carts";
+import { getCartsData } from "../services/api";
 
 function Routers() {
+  const [data, setData] = useState([]);
   const [userToken, setUserToken] = useState(getToken());
   const [category, setCategory] = useState([]);
   const [searchProductName, setSearchProductName] = useState("");
+  const[cartsData, setCartsData] = useState(null)
 
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -29,6 +33,10 @@ function Routers() {
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(theme));
   }, [theme]);
+
+  useEffect(()=>{
+    getCartsData()?.then(setCartsData)
+  },[])
 
   return (
     <div className={`routermode ${theme ? "dark" : ""}`}>
@@ -41,16 +49,21 @@ function Routers() {
           setUserToken={setUserToken}
           searchProductName={searchProductName}
           setSearchProductName={setSearchProductName}
+          cartsData={cartsData}
         />
         <ScrollToTop />
         <Routes>
           <Route
             path="/"
-            element={<Home category={category} setCategory={setCategory} />}
+            element={<Home category={category} setCategory={setCategory} data={data} setData={setData}/>}
           />
           <Route path="/categoryFilter/:id" element={<Categorys />} />
           <Route path="/productDetail/:id" element={<ProductDetail />} />
-          <Route path="/annocumentDetails/:id" element={<AnnoucimentDetails/>}/>
+          <Route
+            path="/annocumentDetails/:id"
+            element={<AnnoucimentDetails />}
+          />
+          <Route path="/carts" element={<Carts cartsData={cartsData} setCartsData={setCartsData}/>} />
           <Route
             path="/searching"
             element={

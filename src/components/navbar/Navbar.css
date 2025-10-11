@@ -9,8 +9,8 @@
 }
 
 .routermode.dark .navbar {
-  background-color: var(--gray);
-  border-bottom: 1px solid var(--blue-main);
+  background-color: var(--gray-blur);
+  border-bottom: 0.2px solid var(--blue-main);
 }
 
 .navbar .container {
@@ -20,11 +20,6 @@
   overflow: hidden;
   z-index: 9;
   padding: 16px 0px;
-  /* background-color: var(--write-main-color); */
-}
-
-.routermode.dark .navbar .container {
-  background-color: var(--gray);
 }
 
 .logo {
@@ -166,13 +161,12 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 2px;
+  left: 1px;
   top: 1.5px;
 }
 
 .routermode.dark .mode {
   left: 48px;
-  background-color: white;
 }
 
 .mode .moon {
@@ -195,17 +189,24 @@
   display: none;
 }
 
-.change-mode h4 {
+.change-mode .mode-words {
   font-size: 16px;
   font-weight: 600;
   color: var(--gray);
   position: absolute;
   right: 6px;
+  border: none;
 }
 
-.routermode.dark .change-mode h4 {
+.change-mode .mode-words:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.routermode.dark .change-mode .mode-words {
   right: 38px;
   color: white;
+  border: none;
 }
 
 .icons p {
@@ -221,6 +222,8 @@
   align-items: center;
   justify-content: center;
 }
+
+
 
 .icons p:hover {
   background-color: var(--gray);
@@ -239,6 +242,57 @@
 
 .icons p svg {
   display: inline-block;
+}
+
+.shopCart {
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  border: 1px solid var(--gray);
+  color: var(--gray);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopCart.active{
+  background-color: var(--gray);
+  color: var(--write-main-color);
+}
+
+.shopCart:hover {
+  background-color: var(--gray);
+  color: var(--write-main-color);
+}
+
+.routermode.dark .shopCart {
+  border: 1px solid var(--write-main-color);
+  color: var(--write-main-color);
+}
+
+.shopCart svg {
+  display: inline-block;
+}
+
+.shopCartCount {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  height: 24px;
+  min-width: 24px;
+  padding: 4px 3px;
+  border-radius: 50%;
+  background-color: var(--red);
+  color: var(--write-main-color);
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-phone-version {
@@ -316,7 +370,7 @@
   font-size: 25px;
 }
 
-.navbar-modal-content .profil{
+.navbar-modal-content .profil {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -367,7 +421,7 @@
   .navbar-modal-content h5 svg {
     font-size: 18px;
   }
-   .navbar-modal-content .profil {
+  .navbar-modal-content .profil {
     font-size: 14px;
   }
   .navbar-modal-content .profil svg {
@@ -426,7 +480,7 @@
     left: 0px;
     background-color: white;
   }
-  .change-mode h4 {
+  .change-mode .mode-words {
     display: none;
   }
 

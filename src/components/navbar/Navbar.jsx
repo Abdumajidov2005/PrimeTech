@@ -12,6 +12,7 @@ import { BsMoonStarsFill } from "react-icons/bs";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
 import { FaXmark } from "react-icons/fa6";
+import { getToken } from "../../pages/services/token";
 
 function Navbar({
   theme,
@@ -20,6 +21,7 @@ function Navbar({
   setUserToken,
   searchProductName,
   setSearchProductName,
+  cartsData
 }) {
   const navigate = useNavigate();
   const [searchPhone, setSearchPhone] = useState(false);
@@ -122,7 +124,7 @@ function Navbar({
               }}
               className="change-mode"
             >
-              <h5 className="mode">
+              <p className="mode">
                 {theme ? (
                   <span className="sun">
                     <IoMdSunny />
@@ -132,13 +134,14 @@ function Navbar({
                     <BsMoonStarsFill />
                   </span>
                 )}
-              </h5>
-              <h4>{theme ? "light" : "dark"}</h4>
+              </p>
+              <p className="mode-words">{theme ? "light" : "dark"}</p>
             </div>
 
-            <p>
+            <NavLink to={"/carts"} className="shopCart">
+              {getToken() ?  cartsData?.length > 0 && <span className="shopCartCount">{cartsData?.length}</span> : ""}
               <FaShoppingCart />
-            </p>
+            </NavLink>
 
             {userToken ? (
               <p

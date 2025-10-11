@@ -5,8 +5,7 @@ import Hero from "../hero/Hero";
 import { getCategoyData, getProductData } from "../services/api";
 import Card from "../../components/card/Card";
 
-function Home({ category, setCategory }) {
-  const [data, setData] = useState([]);
+function Home({ category, setCategory, data, setData }) {
   const [categoryMotion, setCategoryMotion] = useState(false);
   const [dataMotion, setDataMotion] = useState(false);
 

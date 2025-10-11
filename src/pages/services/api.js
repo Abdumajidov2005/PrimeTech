@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { baseUrl } from "./config";
 import { getToken } from "./token";
 
@@ -156,4 +157,49 @@ export const getUserData = () => {
       console.error(error);
       return [];
     });
+};
+
+export const getCartId = (id) => {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Authorization", `Bearer ${getToken()}`);
+
+  const raw = JSON.stringify({
+    product: id,
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  return fetch(`${baseUrl}/cart-add/`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      if (result) {
+        toast.success("Muvofaqqiyatli qo'shildi");
+      }
+    })
+    .catch((error) => console.error(error));
+};
+
+export const getCartsData = () => {
+  const myHeaders = new Headers();
+  myHeaders.append("Authorization", `Bearer ${getToken()}`);
+
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  return fetch(`${baseUrl}/carts/`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      return result;
+    })
+    .catch((error) => console.error(error));
 };
